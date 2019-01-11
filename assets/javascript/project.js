@@ -1,7 +1,8 @@
-let googleapikey = AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8
+let googleApiKey = "AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8"
 let cityName = Atlanta
 let countryCode = US
-let weatherApi = "api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + countryCode
+let weatherApiKey = "75598549dfb84653561068b1a40f42c2"
+let weatherApi = "api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + countryCode + "&APPID=" + weatherApiKey
 var config = {
     apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
     authDomain: "project-one-64b32.firebaseapp.com",
