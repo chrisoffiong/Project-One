@@ -1,0 +1,36 @@
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+p,  {
+   font-family: 'Fira Sans', sans-serif;
+}
+
+h5 {
+    font-family: 'Fira Sans', sans-serif;
+    color: white;
+
+}
+
+#titleBox {
+    background-image: url("../images/bicycle.jpg"); 
+    background-size: cover;  
+    height: 400px;
+    background-color: green;
+}
+
+#titleText {
+    opacity: .7;
+    background-color: black;
+    height: 200px
+}
+
+#mapDisplay {
+    height: 100%;
+}
+
+#map {
+    height: 400px;
+    width: 400px;
+}
