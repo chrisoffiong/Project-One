@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>BikeAdvisor</title>
 </head>
+
 <body>
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col m12">
+                <h1>BikeAdvisor</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m6" id="cityStateSearch">
+                <p>City/State search</p>
+            </div>
+            <div class="col m6" id="areaCodeSearch">
+                <p>Area code search</p>
+            </div>
+        </div>
+        <div class="row" id ="map">
+            <div class="col m8" id="mapDisplay">
+                <p>Map</p>
+            </div>
+            <div class="col m4">
+                <div id="weatherDisplay">
+                    <p>Weather</p>
+                </div>
+                <div id="cardDisplay">
+                    <p>Cards</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8&callback=initMap"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
     <script type="text/javascript" src="assets/javascript/project.js"></script>
 </body>
+
 </html>
