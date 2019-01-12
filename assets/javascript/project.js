@@ -31,10 +31,10 @@ weather();
 function initMap() {
 
   var map = new google.maps.Map(document.getElementById('mapDisplay'), {
-    zoom: 3,
+    zoom: 13,
     center: {
-      lat: -28.024,
-      lng: 140.887
+      lat: 33.775620,
+      lng: -84.396286
     }
   });
   console.log(google);
@@ -57,3 +57,4 @@ var locations = [{
     }]
 
     initMap();
+  
