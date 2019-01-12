@@ -38,16 +38,20 @@ function initialize() {
       center: pyrmont,
       zoom: 15
     });
+  
+  addMarker({lat:33.7756, lng: -84.4030})
 
-  var request = {
-    location: pyrmont,
-    radius: '5000',
-    query: 'bike'
-  };
-
+  function addMarker(coords) {
+  var marker = new google.maps.Marker({
+    position: coords,
+    map: map,
+    title: 'Hello World!'
+  })
+  console.log(google.maps)
+  }
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
-}
+
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -56,6 +60,7 @@ function callback(results, status) {
       createMarker(results[i]);
     }
   }
+}
 }
 
     initialize();
