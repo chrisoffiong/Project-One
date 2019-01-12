@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 $("#submit").on("click", function(event){
     event.preventDefault();
     let googleApiKey = "AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8"
-    let cityName = $(".icons").val();
+    let cityName = $(".icons").val().trim();
     let countryCode = "us"
     let weatherApiKey = "75598549dfb84653561068b1a40f42c2"
     let weatherApi = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "," + countryCode + "&appid=" + weatherApiKey
