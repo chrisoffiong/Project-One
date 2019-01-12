@@ -67,4 +67,3 @@ function callback(results, status) {
 }
 
     initialize();
-  
