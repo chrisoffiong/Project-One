@@ -31,7 +31,7 @@ weather();
 function initMap() {
 
   var map = new google.maps.Map(document.getElementById('mapDisplay'), {
-    zoom: 3,
+    zoom: 13,
     center: {
       lat: -28.024,
       lng: 140.887
@@ -57,3 +57,11 @@ var locations = [{
     }]
 
     initMap();
+
+
+$("#submit").on("click", function(event){
+    event.preventDefault();
+    let city = $("#cityInput").val();
+    let state = $("#stateInput").val();
+    let areaCode = $("#areaCodeInput").val();
+})
