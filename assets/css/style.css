@@ -3,25 +3,27 @@ html {
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Libre Baskerville', serif;
     color: #3c5375;
+    margin-bottom: 2px;
 }
 
-p,  {
-   font-family: 'Fira Sans', sans-serif;
+p  {
+    font-family: 'Bitter', serif;
+    color: #3c5375;
 }
 
 h5 {
-    font-family: 'Fira Sans', sans-serif;
+    margin-top: 2px;
+    font-family: 'Bitter', serif;
     color: #3c5375;
-
 }
 
 #titleBox {
-    background-image: url("../images/bicycle.jpg"); 
-    background-size: cover;  
+    background-image: url("../images/bicycle.jpg");
+    background-size: cover;
     height: 500px;
-    background-color: green;
+    background-color: #bfae84;
     font: white;
     margin-bottom: 30px;
 }
