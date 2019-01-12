@@ -3,31 +3,35 @@ html {
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
-    color: white;
+    font-family: 'Libre Baskerville', serif;
+    color: #3c5375;
+    margin-bottom: 2px;
 }
 
-p,  {
-   font-family: 'Fira Sans', sans-serif;
+p  {
+    font-family: 'Bitter', serif;
+    color: #3c5375;
 }
 
 h5 {
-    font-family: 'Fira Sans', sans-serif;
-    color: white;
-
+    margin-top: 2px;
+    font-family: 'Bitter', serif;
+    color: #3c5375;
 }
 
 #titleBox {
-    background-image: url("../images/bicycle.jpg"); 
-    background-size: cover;  
-    height: 400px;
-    background-color: green;
+    background-image: url("../images/bicycle.jpg");
+    background-size: cover;
+    height: 500px;
+    background-color: #bfae84;
+    font: white;
+    margin-bottom: 30px;
 }
 
 #titleText {
-    opacity: .7;
-    background-color: black;
-    height: 200px
+    opacity: .9;
+    background-color: #dad5ca;
+    height: 500px
 }
 
 #mapDisplay {
@@ -35,6 +39,10 @@ h5 {
 }
 
 #map {
-    height: 400px;
-    width: 500px;
+    height: 500px;
+    /* width: 500px; */
+}
+
+.hide {
+    display: none;
 }
