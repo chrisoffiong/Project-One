@@ -8,10 +8,70 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Poppins" rel="stylesheet">
     <title>BikeAdvisor</title>
 </head>
 <body>
   
+    <!-- <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                </ul>
+        </div>
+    </nav> -->
+    <div class="container">
+        <div class="row">
+            <div class="col m12 z-depth-1" id="titleBox">
+                <div class="col s6 offset-s6" id="titleText">
+                <h1 class="right-align">BikeAdvisor</h1>
+                <h5 class="right-align">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m6" id="cityStateSearch">
+                <p>Search city/state</p>
+                <div class="input-field col m9">
+                    <input id="cityInput" type="text" class="validate">
+                    <label for="cityInput">City</label>
+                </div>
+                <div class="input-field col m3">
+                    <input id="stateInput" type="text" class="validate">
+                    <label for="stateInput">State</label>
+                </div>
+            </div>
+
+            <div class="col m6" id="areaCodeSearch">
+                <p>Search area code</p>
+                <div class="input-field col m6">
+                    <input id="areaCodeInput" type="text" class="validate">
+                    <label for="areaCodeInput">Area Code</label>
+                </div>
+                <div class="col m6">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="map">
+            <div class="col m8 s12" id="mapDisplay">
+                <p class="z-depth-1">Map</p>
+            </div>
+            <div class="col m4 s12">
+                <div id="weatherDisplay">
+                    <p class="z-depth-1">Weather</p>
+                </div>
+                <div id="cardDisplay">
+                    <p class="z-depth-1">Cards</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
