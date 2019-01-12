@@ -64,4 +64,7 @@ $("#submit").on("click", function(event){
     let city = $("#cityInput").val();
     let state = $("#stateInput").val();
     let areaCode = $("#areaCodeInput").val();
+    console.log(city);
+    console.log(state);
+    console.log(areaCode);
 })
