@@ -8,11 +8,12 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Poppins" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Poppins" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Libre+Baskerville" rel="stylesheet">
     <title>BikeAdvisor</title>
 </head>
 <body>
-
+  
     <!-- <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
@@ -23,32 +24,39 @@
                 </ul>
         </div>
     </nav> -->
+    <div>
         <div class="row">
             <div class="col m12 z-depth-1" id="titleBox">
                 <div class="col m6 offset-m6" id="titleText">
                     <h1 class="center-align">BikeAdvisor</h1>
-                    <h5 class="center-align">Plan your next bike trip</h5>
-
+                    <h5 class="center-align">Plan your next ride</h5>
+                
                 <div class="col m12" id="cityStateSearch">
-                    <p class="left-align">Search city/state</p>
                     <div class="input-field col m9">
-                        <input id="cityInput" type="text" class="validate">
-                        <label for="cityInput">City</label>
-                    </div>
-                    <div class="input-field col m3">
-                        <input id="stateInput" type="text" class="validate">
-                        <label for="stateInput">State</label>
+                        <select class="icons">
+                            <option value="" disabled selected>Select your city</option>
+                            <option value="atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
+                            <option value="boston" data-icon="assets/images/boston.jpg">Boston</option>
+                            <option value="newYork" data-icon="assets/images/newyork.jpeg">New York</option>
+                            <option value="portland" data-icon="assets/images/portland.jpg">Portland</option>
+                            <option value="seattle" data-icon="assets/images/seattle.jpg">Seattle</option>
+                        </select>
+                        <!-- <label>Select your city</label> -->
                     </div>
                 </div>
                 <div class="col m12" id="areaCodeSearch">
-                    <p>Search area code</p>
                     <div class="input-field col m6">
-                        <input id="areaCodeInput" type="text" class="validate">
-                        <label for="areaCodeInput">Area Code</label>
+                        <select class="icons">
+                            <option value="" disabled selected>Select your area of interest</option>
+                            <option value="racks" data-icon="assets/images/bikerack.jpg">Racks</option>
+                            <option value="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
+                            <option value="attractions" data-icon="assets/images/attractions.jpg">Attractions</option>
+                        </select>
+                        <!-- <label>Select your area of interest</label> -->
                     </div>
                 </div>
                 <div class="col m6">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
@@ -68,7 +76,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8&callback=initMap"></script>
@@ -77,3 +85,4 @@
     <script type="text/javascript" src="assets/javascript/project.js"></script>
 </body>
 </html>
+

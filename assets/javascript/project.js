@@ -65,3 +65,8 @@ $("#submit").on("click", function(event){
       }
 initialize();
 })
+
+$(document).ready(function(){
+  $('select').formSelect();
+});
+

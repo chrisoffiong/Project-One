@@ -17,11 +17,12 @@ h5 {
     margin-top: 2px;
     font-family: 'Bitter', serif;
     color: #3c5375;
+    margin-bottom: 35px;
 }
 
 #titleBox {
-    background-image: url("../images/bicycle.jpg");
-    background-size: cover;
+    background-image: url("../images/bicycle.jpg"); 
+    background-size: cover;  
     height: 500px;
     background-color: #bfae84;
     font: white;
