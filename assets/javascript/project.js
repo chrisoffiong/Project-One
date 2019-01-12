@@ -29,7 +29,7 @@ $("#submit").on("click", function(event){
         console.log(response);
         let latitude = response.coord.lat;
         let longitude = response.coord.lon;
-        console.log("Latitude: " + latitude + " Longitude: " + longitude);
+        console.log(latitude, longitude);
         console.log((response.main.temp - 273.15) * 1.80 + 32);
       })
 
@@ -40,7 +40,7 @@ $("#submit").on("click", function(event){
       function initialize() {
         var pyrmont = new google.maps.LatLng(33.7756,-84.3963);
 
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('mapDisplay'), {
             center: pyrmont,
             zoom: 15
           });
