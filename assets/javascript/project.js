@@ -1,8 +1,4 @@
-let googleApiKey = "AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8"
-let cityName = "atlanta"
-let countryCode = "us"
-let weatherApiKey = "75598549dfb84653561068b1a40f42c2"
-let weatherApi = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "," + countryCode + "&appid=" + weatherApiKey
+
 var config = {
   apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
   authDomain: "project-one-64b32.firebaseapp.com",
@@ -13,47 +9,63 @@ var config = {
 };
 firebase.initializeApp(config);
 
+$("#submit").on("click", function(event){
+    event.preventDefault();
+    let googleApiKey = "AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8"
+    let cityName = $(".icons").val().trim();
+    let countryCode = "us"
+    let weatherApiKey = "75598549dfb84653561068b1a40f42c2"
+    let weatherApi = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "," + countryCode + "&appid=" + weatherApiKey
+    let state = $("#stateInput").val();
+    let areaCode = $("#areaCodeInput").val();
+    console.log(cityName);
+    console.log(state);
+    console.log(areaCode);
 
+      $.ajax({
+        url: weatherApi,
+        method: "GET"
+      }).then(function (response) {
+        console.log(response);
+        let latitude = response.coord.lat;
+        let longitude = response.coord.lon;
+        console.log(latitude, longitude);
+        console.log((response.main.temp - 273.15) * 1.80 + 32);
+      })
 
-function weather() {
-  $.ajax({
-    url: weatherApi,
-    method: "GET"
-  }).then(function (response) {
-    console.log(response);
-    console.log((response.main.temp - 273.15) * 1.80 + 32)
-  })
-}
+      var map;
+      var service;
+      var infowindow;
 
+      function initialize() {
+        var pyrmont = new google.maps.LatLng(33.7756,-84.3963);
 
-weather();
+        map = new google.maps.Map(document.getElementById('mapDisplay'), {
+            center: pyrmont,
+            zoom: 15
+          });
 
-function initMap() {
+        var request = {
+          location: pyrmont,
+          radius: '5000',
+          query: 'bike'
+        };
 
-  var map = new google.maps.Map(document.getElementById('mapDisplay'), {
-    zoom: 3,
-    center: {
-      lat: -28.024,
-      lng: 140.887
-    }
-  });
-  console.log(google);
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, callback);
+      }
 
-  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            var place = results[i];
+            createMarker(results[i]);
+          }
+        }
+      }
+initialize();
+})
 
-  var markers = locations.map(function (location, i) {
-    return new google.maps.Marker({
-      position: location,
-      label: labels[i % labels.length]
-    });
-  });
-  var markerCluster = new MarkerClusterer(map, markers, {
-    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-  });
-}
-var locations = [{
-      lat: 33.775620,
-      lng: -84.396286
-    }]
-
-    initMap();
+$(document).ready(function(){
+  $('select').formSelect();
+});
