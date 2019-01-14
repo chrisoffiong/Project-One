@@ -10,8 +10,9 @@ var config = {
 firebase.initializeApp(config);
 
 $("#submit").on("click", function(event){
-    event.preventDefault();
-    let googleApiKey = "AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8"
+    event.preventDefault(); 
+    let googleApiKey = "AIzaSyD70gJxVU99cft60x0vppvi_XjKjG_MigM"
+    let googleUrl = "https//maps.googleapis.com/maps/api/place/textsearch/json?query=bike+rack&radius=1500&location=33.75,-84.39&key=" + googleApiKey
     let cityName = $(".icons").val().trim();
     let countryCode = "us"
     let weatherApiKey = "75598549dfb84653561068b1a40f42c2"
@@ -33,6 +34,12 @@ $("#submit").on("click", function(event){
         console.log((response.main.temp - 273.15) * 1.80 + 32);
       })
 
+      $.ajax({
+        url: googleUrl,
+        method: "GET"
+      }).then(function(response2) {
+        console.log(response2)
+      })
       var map;
       var service;
       var infowindow;
