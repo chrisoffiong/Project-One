@@ -31,6 +31,7 @@ $("#submit").on("click", function(event){
         let longitude = response.coord.lon;
         console.log(latitude, longitude);
         console.log((response.main.temp - 273.15) * 1.80 + 32);
+        $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F ");
       })
 
       var map;
