@@ -21,8 +21,8 @@ h5 {
 }
 
 #titleBox {
-    background-image: url("../images/bicycle.jpg"); 
-    background-size: cover;  
+    background-image: url("../images/bicycle.jpg");
+    background-size: cover;
     height: 500px;
     background-color: #bfae84;
     font: white;
@@ -46,4 +46,10 @@ h5 {
 
 .hide {
     display: none;
+}
+
+#weatherDisplay{
+    font-family: 'Bitter', serif;
+    font-size: 32px;
+    color: #3c5375;
 }
