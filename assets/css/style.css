@@ -98,3 +98,20 @@ h5 {
 #titlePar {
     color: white;
 }
+
+#topHeader {
+    text-align: center;
+    padding: 50px;
+    background-image: url("../images/bikingpic.jpg");
+    height: 450px;
+    background-size: cover;
+    background-color: #bfae84;
+
+}
+
+#card {
+    height: 200px;
+    background-color: transparent;
+    padding: 50px;
+    color: white;
+}
