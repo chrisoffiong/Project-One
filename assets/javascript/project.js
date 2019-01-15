@@ -35,38 +35,70 @@ $("#submit").on("click", function(event){
       })
 
       var map;
-      var service;
-      var infowindow;
-
+      
+      
       function initialize() {
-        var pyrmont = new google.maps.LatLng(33.7756,-84.3963);
-
+        let pyrmont;
+        if ($("#atlanta").val() == "atlanta") {
+          pyrmont = new google.maps.LatLng(33.7756,-84.3963);
+        }
+        else if ($("#boston").val() == "boston") {
+           pyrmont = new google.maps.LatLng(42.3601,-71.0589)
+        }
+        else if ($("#newyork").val() == "new york") {
+           pyrmont = new google.maps.LatLng(40.7831,-73.9712)
+        }
+        else if ($("#portland").val() == "portland") {
+           pyrmont = new google.maps.LatLng(45.5122,-122.6587)
+        }
+        else if ($("#seattle").val() == "seattle") {
+           pyrmont = new google.maps.LatLng(47.6062, -122.3321)
+        }
+        
+        var request;
         map = new google.maps.Map(document.getElementById('mapDisplay'), {
             center: pyrmont,
-            zoom: 15
+            zoom: 13
           });
-
+      if ($("#shops").val() == "shops") {
         var request = {
           location: pyrmont,
           radius: '5000',
-          query: 'bike'
-        };
-
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, callback);
+          type: ['bicycle_store']
+        } 
       }
-
+      else if ($("#attractions").val() == "attractions") {
+        var request = {
+          location: pyrmont,
+          radius: '5000',
+          type: ['stadium','aquarium','movie_theater','bar']
+      }
+    }
+       ;
+    
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, callback);
+      }
+    
+      
       function callback(results, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
-            var place = results[i];
             createMarker(results[i]);
           }
         }
       }
-initialize();
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        })
+      }
+      initialize()
+      google.maps.event.addDomListener(window, 'load', initialize)
 })
 
 $(document).ready(function(){
   $('select').formSelect();
-});
+})
