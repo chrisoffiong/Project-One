@@ -74,3 +74,8 @@ initialize();
 $(document).ready(function(){
   $('select').formSelect();
 });
+
+$('.rating-container .star').click(function () {
+    $('.rating-container .star').removeClass('active2');
+    $(this).prevAll('.star').addBack().addClass('active2');
+});
