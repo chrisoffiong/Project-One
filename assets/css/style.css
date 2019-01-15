@@ -50,7 +50,12 @@ h5 {
 
 #weatherDisplay{
     font-family: 'Bitter', serif;
-    font-size: 32px;
+    font-size: 24px;
     color: #3c5375;
-    background: #7ec0ee;
+    height: 96px;
+}
+
+#icon{
+    width: 96px;
+    height: 100%;
 }
