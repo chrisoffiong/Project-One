@@ -8,6 +8,16 @@ h1 {
     margin-bottom: 2px;
 }
 
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
 p  {
     font-family: 'Bitter', serif;
     color: #3c5375;
@@ -20,10 +30,18 @@ h5 {
     margin-bottom: 35px;
 }
 
+.nav-wrapper {
+    background-color: #3c5375;
+}
+
+.page-footer {
+    background-color: #3c5375;
+}
+
 #titleBox {
     background-image: url("../images/bicycle.jpg"); 
     background-size: cover;  
-    height: 500px;
+    height: 550px;
     background-color: #bfae84;
     font: white;
     margin-bottom: 30px;
@@ -32,7 +50,8 @@ h5 {
 #titleText {
     opacity: .9;
     background-color: #dad5ca;
-    height: 500px
+    height: 500px;
+    margin-top: 25px;
 }
 
 #mapDisplay {
@@ -41,9 +60,25 @@ h5 {
 
 #map {
     height: 500px;
-    /* width: 500px; */
 }
 
 .hide {
     display: none;
+}
+
+#reviewForm {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.star {
+    display: inline-block;    
+    width: 10px;
+    height: 10px;
+    background-color: #CC0;
+    margin: 3px;
+}
+.active2 {
+    background-color: #C00;
 }

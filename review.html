@@ -17,62 +17,66 @@
         <div class="nav-wrapper">
 <!--             <a href="#" class="brand-logo">BikeAdvisor</a> -->
                 <ul id="nav-mobile" class="right">
-                    <li class="active"><a href="index.html"><i class="material-icons">map</i></a></li>
-                    <li><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
+                    <li><a href="index.html"><i class="material-icons">map</i></a></li>
+                    <li class="active"><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
                     <li><a href="support.html"><i class="small material-icons">live_help</i></a></li>
                 </ul>
         </div>
     </nav>
-    <div class="content">
+    <div class="container z-depth-2" id="reviewForm">
         <div class="row">
-            <div class="col m12 z-depth-1" id="titleBox">
-                <div class="col m6 offset-m6" id="titleText">
-                    <h1 class="center-align">BikeAdvisor</h1>
-                    <h5 class="center-align">Plan your next ride</h5>
-
-                <div class="col m12" id="cityStateSearch">
-                    <div class="input-field col m9 s12">
-                        <select class="icons">
-                            <option value="" disabled selected>Select city</option>
-                            <option value="atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
-                            <option value="boston" data-icon="assets/images/boston.jpg">Boston</option>
-                            <option value="new york" data-icon="assets/images/newyork.jpeg">New York</option>
-                            <option value="portland" data-icon="assets/images/portland.jpg">Portland</option>
-                            <option value="seattle" data-icon="assets/images/seattle.jpg">Seattle</option>
-                        </select>
-                        <!-- <label>Select your city</label> -->
-                    </div>
-                </div>
-                <div class="col m12" id="areaCodeSearch">
-                    <div class="input-field col m9 s12">
-                        <select class="icons">
-                            <option value="" disabled selected>Select activity</option>
-                            <option value="racks" data-icon="assets/images/bikerack.jpg">Racks</option>
-                            <option value="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
-                            <option value="attractions" data-icon="assets/images/attractions.jpg">Attractions</option>
-                        </select>
-                        <!-- <label>Select your area of interest</label> -->
-                    </div>
-                </div>
-                <div class="col m6 s12">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-                </div>
+            <div class="col m12">
+                <h4 class="center-align">Submit a review</h4>
             </div>
         </div>
-        <div class="row" id="map">
-            <div class="col m8 s12" id="mapDisplay">
-<!--                 <p class="z-depth-1">Map</p> -->
+        <div class="row">
+            <div class="col m12">
+                <form action="#">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Your email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m12">
+                            <label>Your rating</label>
+                            <div class="rating-container">
+                                <div class="star" id="oneStars"></div>
+                                <div class="star" id="twoStars"></div>
+                                <div class="star" id="threeStars"></div>
+                                <div class="star" id="fourStars"></div>
+                                <div class="star" id="fiveStars"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Write a review</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m12">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file" multiple>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Upload one or more images">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="col m4 s12">
-                <div id="weatherDisplay">
-<!--                     <p class="z-depth-1">Weather</p> -->
-                </div>
-                <div id="cardDisplay">
-<!--                     <p class="z-depth-1">Cards</p> -->
-                </div>
+        </div>
+        <div class="row">
+            <div class="col m6 s12">
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
         </div>
     </div>
