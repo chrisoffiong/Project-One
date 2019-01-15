@@ -23,7 +23,7 @@ p  {
     color: #3c5375;
 }
 
-h5 {
+#subHeader {
     margin-top: 2px;
     font-family: 'Bitter', serif;
     color: #3c5375;
@@ -113,5 +113,10 @@ h5 {
     height: 200px;
     background-color: transparent;
     padding: 50px;
+    color: white;
+}
+
+#textHeader, h5{
+    font-family: 'Libre Baskerville', serif;
     color: white;
 }
