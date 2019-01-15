@@ -52,14 +52,32 @@ $("#submit").on("click", function(event){
             zoom: 15
           });
 
-        var request = {
-          location: pyrmont,
-          radius: '5000',
-          query: 'bike'
-        };
+          infowindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch({
+            location: pyrmont,
+            radius: 500,
+            type: ['bicycle_store']
+          }, callback);
 
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, callback);
+          function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+              }
+            }
+          }
+          function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+    
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent(place.name);
+              infowindow.open(map, this);
+            });
       }
 
       function callback(results, status) {
@@ -69,9 +87,11 @@ $("#submit").on("click", function(event){
             createMarker(results[i]);
           }
         }
+        
       }
-initialize();
-})
+      initialize();
+}
+
 
 $(document).ready(function(){
   $('select').formSelect();
