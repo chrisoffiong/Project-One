@@ -47,3 +47,8 @@ h5 {
 .hide {
     display: none;
 }
+
+
+#titlePar {
+    color: white;
+}
