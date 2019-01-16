@@ -39,19 +39,19 @@ $("#submit").on("click", function(event){
       
       function initialize() {
         let pyrmont;
-        if ($("#atlanta").val() == "atlanta") {
+        if ($("option").val() == "atlanta") {
           pyrmont = new google.maps.LatLng(33.7756,-84.3963);
         }
-        else if ($("#boston").val() == "boston") {
+        else if ($("option").val() == "boston") {
            pyrmont = new google.maps.LatLng(42.3601,-71.0589)
         }
-        else if ($("#newyork").val() == "new york") {
+        else if ($("option").val() == "new york") {
            pyrmont = new google.maps.LatLng(40.7831,-73.9712)
         }
-        else if ($("#portland").val() == "portland") {
+        else if ($("option").val() == "portland") {
            pyrmont = new google.maps.LatLng(45.5122,-122.6587)
         }
-        else if ($("#seattle").val() == "seattle") {
+        else if ($("option").val() == "seattle") {
            pyrmont = new google.maps.LatLng(47.6062, -122.3321)
         }
         
