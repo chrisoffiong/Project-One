@@ -31,7 +31,7 @@ $("#submit").on("click", function(event){
         let latitude = response.coord.lat;
         let longitude = response.coord.lon;
         let iconId = response.weather[0].icon;
-        console.log(iconId);
+        console.log(parseInt(iconId.substring(0, 2)));
         let iconUrl = "http://openweathermap.org/img/w/" + iconId + ".png";
         console.log(latitude, longitude);
         console.log((response.main.temp - 273.15) * 1.80 + 32);
@@ -40,6 +40,31 @@ $("#submit").on("click", function(event){
         $("#weatherType").html(response.weather[0].main);
         $("#weatherCard").addClass("z-depth-1");
         $("#weatherCard").addClass("populatedCard");
+        if (iconId.substr(-1) == "n") {
+          $("#weatherCard").css("background-color", "#282828"); 
+          $("#weatherDisplay").css("color", "white"); 
+          $("#weatherType").css("color", "white");         
+        } else if (parseInt(iconId.substring(0, 2)) < 3) {
+          $("#weatherCard").css("background-color", "#add6f5"); 
+          $("#weatherDisplay").css("color", "white"); 
+          $("#weatherType").css("color", "white");          
+        } else if (parseInt(iconId.substring(0, 2)) < 9) {
+          $("#weatherCard").css("background-color", "#808080"); 
+          $("#weatherDisplay").css("color", "white"); 
+          $("#weatherType").css("color", "white");
+        } else if (parseInt(iconId.substring(0, 2)) < 13) { 
+          $("#weatherCard").css("background-color", "#3c5375"); 
+          $("#weatherDisplay").css("color", "white"); 
+          $("#weatherType").css("color", "white");
+        } else if (parseInt(iconId.substring(0, 2)) < 50) { 
+          $("#weatherCard").css("background-color", "white"); 
+          $("#weatherDisplay").css("color", "#3c5375"); 
+          $("#weatherType").css("color", "#3c5375");
+        } else {
+          $("#weatherCard").css("background-color", "white"); 
+          $("#weatherDisplay").css("color", "#3c5375"); 
+          $("#weatherType").css("color", "#3c5375");         
+        }
       })
 
       $.ajax({
