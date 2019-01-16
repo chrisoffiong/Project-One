@@ -11,9 +11,9 @@ firebase.initializeApp(config);
 
 $("#submit").on("click", function(event){
     event.preventDefault();
-    
+
     let place = $("#cities").val();
-    let attractions = $("#attractions").val();
+
 
     console.log(place);
     let cityName = $(".icons").val().trim();
@@ -41,6 +41,7 @@ $("#submit").on("click", function(event){
 
         $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
         var map;
+        let attractions = $("#attractions").val();
          function initMap() {
            map = new google.maps.Map(document.getElementById('mapDisplay'), {
              center: {lat: latitude, lng: longitude},
@@ -50,8 +51,8 @@ $("#submit").on("click", function(event){
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: location,
-          radius: 20000,
-          type: [attractions]
+          radius: 10000,
+          name: [attractions]
         }, callback);
       }
 
@@ -60,6 +61,7 @@ $("#submit").on("click", function(event){
           for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
           }
+          console.log(results);
         }
       }
 
