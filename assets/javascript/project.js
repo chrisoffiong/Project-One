@@ -31,12 +31,15 @@ $("#submit").on("click", function(event){
         let latitude = response.coord.lat;
         let longitude = response.coord.lon;
         let iconId = response.weather[0].icon;
+        console.log(iconId);
         let iconUrl = "http://openweathermap.org/img/w/" + iconId + ".png";
         console.log(latitude, longitude);
         console.log((response.main.temp - 273.15) * 1.80 + 32);
-
-        $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
-
+        $("#weatherDisplay").html(Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F ");
+        $("#weatherIcon").html("<img id='icon' src='" + iconUrl + "'>");
+        $("#weatherType").html(response.weather[0].main);
+        $("#weatherCard").addClass("z-depth-1");
+        $("#weatherCard").addClass("populatedCard");
       })
 
       $.ajax({
