@@ -11,10 +11,10 @@ firebase.initializeApp(config);
 
 $("#submit").on("click", function(event){
     event.preventDefault();
-    let googleApiKey = "AIzaSyBFN1qM1ehiZ17-E0S-ub-9gOmTIn8qDQw"
+    
     let place = $("#cities").val();
     let attractions = $("#attractions").val();
-    let googleUrl = "https//maps.googleapis.com/maps/api/place/textsearch/json?query=" + place + "&radius=1500&location=33.75,-84.39&key=" + googleApiKey
+
     console.log(place);
     let cityName = $(".icons").val().trim();
     let countryCode = "us"
