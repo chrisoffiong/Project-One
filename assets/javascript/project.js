@@ -50,13 +50,13 @@ $("#submit").on("click", function(event){
            var bikeLayer = new google.maps.BicyclingLayer();
            bikeLayer.setMap(map);
         var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
+        if ($("option").val() == ) {service.nearbySearch({
           location: location,
           radius: 10000,
           type: ['bicycle_store']
-        }, callback);
+        }, callback)};
       }
-
+      
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
