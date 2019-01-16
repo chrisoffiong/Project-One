@@ -9,6 +9,7 @@ html {
     height: 450px;
     background-size: cover;
     background-color: #bfae84;
+    font-family: 'Libre Baskerville', serif;
     
 }
 
@@ -17,4 +18,11 @@ html {
     background-color: transparent;
     padding: 50px;
     color: white;
+}
+.nav-wrapper, .page-footer {
+    background-color: #3c5375;
+}
+
+#submitButton {
+    background-color: #3c5375;
 }
