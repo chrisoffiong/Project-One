@@ -14,7 +14,7 @@ $("#submit").on("click", function(event){
     
     let place = $("#cities").val();
     let attractions = $("#attractions").val();
-
+    let reviewArray = [];
     console.log(place);
     let cityName = $(".icons").val().trim();
     let countryCode = "us"
@@ -44,14 +44,16 @@ $("#submit").on("click", function(event){
          function initMap() {
            map = new google.maps.Map(document.getElementById('mapDisplay'), {
              center: {lat: latitude, lng: longitude},
-             zoom: 12
+             zoom: 13
            });
            infowindow = new google.maps.InfoWindow();
+           var bikeLayer = new google.maps.BicyclingLayer();
+           bikeLayer.setMap(map);
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: location,
-          radius: 20000,
-          type: [attractions]
+          radius: 10000,
+          type: ['bicycle_store']
         }, callback);
       }
 
@@ -67,7 +69,7 @@ $("#submit").on("click", function(event){
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
-          position: place.geometry.location
+          position: place.geometry.location,
         });
 
         google.maps.event.addListener(marker, 'click', function() {
