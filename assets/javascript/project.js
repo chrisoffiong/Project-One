@@ -50,11 +50,16 @@ $("#submit").on("click", function(event){
            var bikeLayer = new google.maps.BicyclingLayer();
            bikeLayer.setMap(map);
         var service = new google.maps.places.PlacesService(map);
-        if ($("option").val() == ) {service.nearbySearch({
+        if ($("#attraction :selected").val() == "shops" ) {service.nearbySearch({
           location: location,
           radius: 10000,
           type: ['bicycle_store']
-        }, callback)};
+        }, callback)}
+        if ($("#attraction :selected").val() == "attractions" ) {service.nearbySearch({
+          location: location,
+          radius: 10000,
+          type: ['bar']
+        }, callback)}
       }
       
       function callback(results, status) {
