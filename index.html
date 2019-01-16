@@ -32,7 +32,7 @@
 
                 <div class="col m12" id="cityStateSearch">
                     <div class="input-field col m9 s12">
-                        <select class="icons">
+                        <select class="icons" id="cities">
                             <option value="" disabled selected>Select your city</option>
                             <option value="atlanta" id= "atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
                             <option value="boston"  id= "boston" data-icon="assets/images/boston.jpg">Boston</option>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col m12" id="areaCodeSearch">
                     <div class="input-field col m9 s12">
-                        <select class="icons">
+                        <select class="icons" id="attractions">
                             <option value="" disabled selected>Select activity</option>
                             <option value="racks" data-icon="assets/images/bikerack.jpg">Racks</option>
                             <option value="shops" id ="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
@@ -104,7 +104,8 @@
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70gJxVU99cft60x0vppvi_XjKjG_MigM&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7KMMtIN-AKirtCTZf6g-RmculOGPkAxE&callback=initMap"
+    async defer></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
     <script type="text/javascript" src="assets/javascript/project.js"></script>
