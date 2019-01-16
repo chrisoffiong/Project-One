@@ -46,8 +46,8 @@ $("#submit").on("click", function(event){
           $("#weatherType").css("color", "white");         
         } else if (parseInt(iconId.substring(0, 2)) < 3) {
           $("#weatherCard").css("background-color", "#add6f5"); 
-          $("#weatherDisplay").css("color", "white"); 
-          $("#weatherType").css("color", "white");          
+          $("#weatherDisplay").css("color", "#3c5375"); 
+          $("#weatherType").css("color", "#3c5375");          
         } else if (parseInt(iconId.substring(0, 2)) < 9) {
           $("#weatherCard").css("background-color", "#808080"); 
           $("#weatherDisplay").css("color", "white"); 
@@ -61,7 +61,7 @@ $("#submit").on("click", function(event){
           $("#weatherDisplay").css("color", "#3c5375"); 
           $("#weatherType").css("color", "#3c5375");
         } else {
-          $("#weatherCard").css("background-color", "white"); 
+          $("#weatherCard").css("background-color", "#bda29e"); 
           $("#weatherDisplay").css("color", "#3c5375"); 
           $("#weatherType").css("color", "#3c5375");         
         }
