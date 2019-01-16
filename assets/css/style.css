@@ -23,7 +23,7 @@ p  {
     color: #3c5375;
 }
 
-h5 {
+#subHeader {
     margin-top: 2px;
     font-family: 'Bitter', serif;
     color: #3c5375;
@@ -39,8 +39,8 @@ h5 {
 }
 
 #titleBox {
-    background-image: url("../images/bicycle.jpg"); 
-    background-size: cover;  
+    background-image: url("../images/bicycle.jpg");
+    background-size: cover;
     height: 550px;
     background-color: #bfae84;
     font: white;
@@ -65,7 +65,6 @@ h5 {
 .hide {
     display: none;
 }
-
 #reviewForm {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -73,7 +72,7 @@ h5 {
 }
 
 .star {
-    display: inline-block;    
+    display: inline-block;
     width: 10px;
     height: 10px;
     background-color: #CC0;
@@ -81,4 +80,43 @@ h5 {
 }
 .active2 {
     background-color: #C00;
+}
+
+#weatherDisplay{
+    font-family: 'Bitter', serif;
+    font-size: 24px;
+    color: #3c5375;
+    height: 96px;
+}
+
+#icon{
+    width: 96px;
+    height: 100%;
+}
+
+
+#titlePar {
+    color: white;
+}
+
+#topHeader {
+    text-align: center;
+    padding: 50px;
+    background-image: url("../images/bikingpic.jpg");
+    height: 450px;
+    background-size: cover;
+    background-color: #bfae84;
+
+}
+
+#card {
+    height: 200px;
+    background-color: transparent;
+    padding: 50px;
+    color: white;
+}
+
+#textHeader, h5{
+    font-family: 'Libre Baskerville', serif;
+    color: white;
 }

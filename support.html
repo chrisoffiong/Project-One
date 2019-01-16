@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Libre+Baskerville" rel="stylesheet">
+    <title>Support Page</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+<!--             <a href="#" class="brand-logo">BikeAdvisor</a> -->
+                <ul id="nav-mobile" class="right">
+                    <li><a href="index.html"><i class="material-icons">map</i></a></li>
+                    <li><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
+                    <li class="active"><a href="support.html"><i class="small material-icons">live_help</i></a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <div id="container">
+        <div class="row">
+            <div class="col-lg-12" id="topHeader">
+                <div id="card">
+                    <h1 id="textHeader">Need Help?</h1>
+                    <h5>Email us with any questions or inquiries, or give us a call at 404-922-8604. We would be happy to answer any questions or assist with any concerns.</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <form class="col-lg-12">
+                <div class="row">
+                    <div class="input-field col s8">
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Your Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s8">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s8">
+                        <input id="phone_number" type="email" class="validate">
+                        <label for="phone_number">Phone Number</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s8">
+                        <label>Subject</label>
+                        <select class="browser-default" style="background-color: #f2f2f2;">
+                            <option value="" disabled selected>Select</option>
+                            <option value="1">Bike Rack Issues</option>
+                            <option value="2">Store Closed/Not at Location</option>
+                            <option value="3">Miscellaneous</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s8">
+                        <label>Message</label>
+                        <textarea name="message" id="messageArea" cols="30" rows="10" placeholder=""></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s8">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/project.js"></script>
+</body>
+</html>
