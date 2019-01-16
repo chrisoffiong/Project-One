@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 
 $("#submit").on("click", function(event){
     event.preventDefault();
-    let googleApiKey = "AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8"
+    let googleApiKey = "AIzaSyBFN1qM1ehiZ17-E0S-ub-9gOmTIn8qDQw"
     let place = $("#cities").val();
     let attractions = $("#attractions").val();
     let googleUrl = "https//maps.googleapis.com/maps/api/place/textsearch/json?query=" + place + "&radius=1500&location=33.75,-84.39&key=" + googleApiKey
@@ -33,23 +33,54 @@ $("#submit").on("click", function(event){
         console.log(response);
         let latitude = response.coord.lat;
         let longitude = response.coord.lon;
+        let location = {lat: latitude, lng: longitude};
         let iconId = response.weather[0].icon;
         let iconUrl = "http://openweathermap.org/img/w/" + iconId + ".png";
         console.log(latitude, longitude);
         console.log((response.main.temp - 273.15) * 1.80 + 32);
 
         $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
+        var map;
+         function initMap() {
+           map = new google.maps.Map(document.getElementById('mapDisplay'), {
+             center: {lat: latitude, lng: longitude},
+             zoom: 12
+           });
+           infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: location,
+          radius: 20000,
+          type: [attractions]
+        }, callback);
+      }
 
-      })
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
 
-      var map;
-       function initMap() {
-         map = new google.maps.Map(document.getElementById('mapDisplay'), {
-           center: {lat: -34.397, lng: 150.644},
-           zoom: 8
-         });
-       }
-       initMap();
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+initMap();
+  })
+
+
+
+
   });
 
 
