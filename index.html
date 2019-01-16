@@ -13,28 +13,27 @@
     <title>BikeAdvisor</title>
 </head>
 <body>
-
-    <!-- <nav>
+    <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+<!--             <a href="#" class="brand-logo">BikeAdvisor</a> -->
+                <ul id="nav-mobile" class="right">
+                    <li class="active"><a href="index.html"><i class="material-icons">map</i></a></li>
+                    <li><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
+                    <li><a href="support.html"><i class="small material-icons">live_help</i></a></li>
                 </ul>
         </div>
-    </nav> -->
-    <div>
+    </nav>
+    <div class="content">
         <div class="row">
             <div class="col m12 z-depth-1" id="titleBox">
                 <div class="col m6 offset-m6" id="titleText">
                     <h1 class="center-align">BikeAdvisor</h1>
-                    <h5 class="center-align">Plan your next ride</h5>
+                    <h5 id="subHeader" class="center-align">Plan your next ride</h5>
 
                 <div class="col m12" id="cityStateSearch">
-                    <div class="input-field col m9">
+                    <div class="input-field col m9 s12">
                         <select class="icons">
-                            <option value="" disabled selected>Select your city</option>
+                            <option value="" disabled selected>Select city</option>
                             <option value="atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
                             <option value="boston" data-icon="assets/images/boston.jpg">Boston</option>
                             <option value="new york" data-icon="assets/images/newyork.jpeg">New York</option>
@@ -45,9 +44,9 @@
                     </div>
                 </div>
                 <div class="col m12" id="areaCodeSearch">
-                    <div class="input-field col m6">
+                    <div class="input-field col m9 s12">
                         <select class="icons">
-                            <option value="" disabled selected>Select your area of interest</option>
+                            <option value="" disabled selected>Select activity</option>
                             <option value="racks" data-icon="assets/images/bikerack.jpg">Racks</option>
                             <option value="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
                             <option value="attractions" data-icon="assets/images/attractions.jpg">Attractions</option>
@@ -55,7 +54,7 @@
                         <!-- <label>Select your area of interest</label> -->
                     </div>
                 </div>
-                <div class="col m6">
+                <div class="col m6 s12">
                     <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
                         <i class="material-icons right">send</i>
                     </button>
@@ -65,21 +64,47 @@
         </div>
         <div class="row" id="map">
             <div class="col m8 s12" id="mapDisplay">
-                <p class="z-depth-1">Map</p>
+<!--                 <p class="z-depth-1">Map</p> -->
             </div>
             <div class="col m4 s12">
                 <div id="weatherDisplay">
-                    <p class="z-depth-1">Weather</p>
+                    <div id="icon"></div>
                 </div>
                 <div id="cardDisplay">
-                    <p class="z-depth-1">Cards</p>
+<!--                     <p class="z-depth-1">Cards</p> -->
                 </div>
             </div>
         </div>
     </div>
+
+            <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+<!--               <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div> -->
+              <div class="col l4 s12">
+                <h5 class="white-text">Navigation</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="index.html">Discover</a></li>
+                  <li><a class="grey-text text-lighten-3" href="review.html">Review</a></li>
+                  <li><a class="grey-text text-lighten-3" href="support.html">Support</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright
+<!--             <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+            </div>
+          </div>
+        </footer>
+
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD70gJxVU99cft60x0vppvi_XjKjG_MigM&callback=initMap"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
     <script type="text/javascript" src="assets/javascript/project.js"></script>
