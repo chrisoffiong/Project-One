@@ -16,13 +16,12 @@ $("#submit").on("click", function(event){
 
 
     console.log(place);
-    let cityName = $(".icons").val().trim();
+    let cityId = $(".icons").val().trim();
     let countryCode = "us"
     let weatherApiKey = "75598549dfb84653561068b1a40f42c2"
-    let weatherApi = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "," + countryCode + "&appid=" + weatherApiKey
+    let weatherApi = "https://api.openweathermap.org/data/2.5/weather?id=" + cityId + "&appid=" + weatherApiKey
     let state = $("#stateInput").val();
     let areaCode = $("#areaCodeInput").val();
-    console.log(cityName);
     console.log(state);
     console.log(areaCode);
 
@@ -40,18 +39,19 @@ $("#submit").on("click", function(event){
         console.log((response.main.temp - 273.15) * 1.80 + 32);
 
         $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
+
         var map;
         let attractions = $("#attractions").val();
          function initMap() {
            map = new google.maps.Map(document.getElementById('mapDisplay'), {
              center: {lat: latitude, lng: longitude},
-             zoom: 12
+             zoom: 11
            });
            infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: location,
-          radius: 10000,
+          radius: 20000,
           name: [attractions]
         }, callback);
       }
