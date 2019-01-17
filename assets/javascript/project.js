@@ -41,6 +41,8 @@ $("#submit").on("click", function(event){
 
         $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
         var map;
+        var service;
+        var infowindow;
          function initMap() {
            map = new google.maps.Map(document.getElementById('mapDisplay'), {
              center: {lat: latitude, lng: longitude},
@@ -60,6 +62,15 @@ $("#submit").on("click", function(event){
           radius: 10000,
           type: ['bar']
         }, callback)}
+        if ($("#attraction :selected").val() == "racks" )   {var request = {
+          query: 'bike rack',
+          fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
+        };
+      
+        service = new google.maps.places.PlacesService(map);
+        service.findPlaceFromQuery(request, callback);
+      }
+      
       }
       
       function callback(results, status) {
