@@ -47,13 +47,19 @@ $("#submit").on("click", function(event){
              center: {lat: latitude, lng: longitude},
              zoom: 11
            });
-           infowindow = new google.maps.InfoWindow();var bikeLayer = new google.maps.BicyclingLayer();
+           infowindow = new google.maps.InfoWindow();
+           var bikeLayer = new google.maps.BicyclingLayer();
            bikeLayer.setMap(map);
+           var request = {
+  placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4',
+  fields: ['name', 'rating', 'formatted_phone_number', 'geometry']
+};
         var service = new google.maps.places.PlacesService(map);
+        service.getDetails(request, callback);
         service.nearbySearch({
           location: location,
           radius: 20000,
-          name: [attractions]
+          keyword: [attractions]
         }, callback);
       }
 
@@ -74,11 +80,20 @@ $("#submit").on("click", function(event){
           position: place.geometry.location
         });
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
           map.setZoom(17);
           map.setCenter(marker.getPosition());
-          $(".card").html("<h4 class='card' id='cardHeader'>" + place.name + "</h4>");
+          function createPhotoMarker(place) {
+  var photos = place.photos;
+  console.log(photos[0].getUrl())
+  if (!photos) {
+    return;
+}}
+
+        console.log(place);
+
+
+          $(".card-title").html(place.name);
+          $(".card-content").html(marker.getPosition());
         });
       }
 initMap();

@@ -121,6 +121,10 @@ p  {
     color: white;
 }
 
-.card{
+#title{
+    color: black;
+}
 
+#cardDisplay{
+    margin-top: 120px;
 }
