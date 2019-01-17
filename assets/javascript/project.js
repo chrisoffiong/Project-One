@@ -76,6 +76,8 @@ $("#submit").on("click", function(event){
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name);
           infowindow.open(map, this);
+          map.setZoom(17);
+          map.setCenter(marker.getPosition());
           $(".card").html("<h4 class='card' id='cardHeader'>" + place.name + "</h4>");
         });
       }
