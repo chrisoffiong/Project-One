@@ -51,8 +51,8 @@ $("#submit").on("click", function(event){
            var bikeLayer = new google.maps.BicyclingLayer();
            bikeLayer.setMap(map);
            var request = {
-  placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4',
-  fields: ['name', 'rating', 'formatted_phone_number', 'geometry']
+  placeId: place.placeId,
+  fields: ['address_component', 'adr_address', 'alt_id', 'formatted_address', 'geometry', 'icon', 'id', 'name', 'permanently_closed', 'photo', 'place_id', 'plus_code', 'scope', 'type', 'url', 'utc_offset', 'vicinity']
 };
         var service = new google.maps.places.PlacesService(map);
         service.getDetails(request, callback);
@@ -61,41 +61,43 @@ $("#submit").on("click", function(event){
           radius: 20000,
           keyword: [attractions]
         }, callback);
-      }
 
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
+        function callback(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              createMarker(results[i]);
 
+            }
+            console.log(results);
           }
-          console.log(results);
+        }
+
+        function createMarker(place) {
+          var placeLoc = place.geometry.location;
+          var marker = new google.maps.Marker({
+            map: map,
+            place: {
+          placeId: place.place_id,
+          location: place.geometry.location
+        }
+          });
+          google.maps.event.addListener(marker, 'click', function() {
+            map.setZoom(17);
+            map.setCenter(marker.getPosition());
+
+
+  $(".card").html("<h5>" + place.name + "</h5>" + "<div class='card-tabs'> <ul class='tabs tabs-fixed-width'> <li class'tab'> <a href='#test4'>Description</a> </li> <li class='tab'> <a href='#test5'>Reviews</a> </li> <li class='tab'> <a href='#test6'>Photos</a> </li> </ul> </div> <div class='card-content grey lighten-4'> <div id='test4'>" + place.vicinity + "</div> <div id='test5'>Test 2</div> <div id='test6'>Test 3</div> </div>");
+
+          console.log(place);
+
+
+            // $(".card-title").html(place.name);
+            // $(".card-content").html(marker.getPosition());
+          });
         }
       }
 
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-          map.setZoom(17);
-          map.setCenter(marker.getPosition());
-          function createPhotoMarker(place) {
-  var photos = place.photos;
-  console.log(photos[0].getUrl())
-  if (!photos) {
-    return;
-}}
 
-        console.log(place);
-
-
-          $(".card-title").html(place.name);
-          $(".card-content").html(marker.getPosition());
-        });
-      }
 initMap();
   })
 
