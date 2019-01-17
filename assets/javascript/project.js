@@ -39,7 +39,6 @@ $("#submit").on("click", function(event){
         console.log((response.main.temp - 273.15) * 1.80 + 32);
 
         $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
-
         var map;
         let attractions = $("#attractions").val();
          function initMap() {
@@ -51,7 +50,7 @@ $("#submit").on("click", function(event){
            var bikeLayer = new google.maps.BicyclingLayer();
            bikeLayer.setMap(map);
            var request = {
-  placeId: place.placeId,
+  placeId: "ChIJkyfWx8ED9YgRDzktDY6a_64",
   fields: ['address_component', 'adr_address', 'alt_id', 'formatted_address', 'geometry', 'icon', 'id', 'name', 'permanently_closed', 'photo', 'place_id', 'plus_code', 'scope', 'type', 'url', 'utc_offset', 'vicinity']
 };
         var service = new google.maps.places.PlacesService(map);
@@ -76,10 +75,7 @@ $("#submit").on("click", function(event){
           var placeLoc = place.geometry.location;
           var marker = new google.maps.Marker({
             map: map,
-            place: {
-          placeId: place.place_id,
-          location: place.geometry.location
-        }
+            position: place.geometry.location
           });
           google.maps.event.addListener(marker, 'click', function() {
             map.setZoom(17);
@@ -88,7 +84,7 @@ $("#submit").on("click", function(event){
 
   $(".card").html("<h5>" + place.name + "</h5>" + "<div class='card-tabs'> <ul class='tabs tabs-fixed-width'> <li class'tab'> <a href='#test4'>Description</a> </li> <li class='tab'> <a href='#test5'>Reviews</a> </li> <li class='tab'> <a href='#test6'>Photos</a> </li> </ul> </div> <div class='card-content grey lighten-4'> <div id='test4'>" + place.vicinity + "</div> <div id='test5'>Test 2</div> <div id='test6'>Test 3</div> </div>");
 
-          console.log(place);
+          console.log(request);
 
 
             // $(".card-title").html(place.name);
