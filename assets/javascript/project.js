@@ -8,7 +8,7 @@ var config = {
   messagingSenderId: "668349026732"
 };
 firebase.initializeApp(config);
-
+$("#cardy").hide()
 $("#submit").on("click", function(event){
     event.preventDefault();
     
@@ -38,7 +38,7 @@ $("#submit").on("click", function(event){
         let iconUrl = "http://openweathermap.org/img/w/" + iconId + ".png";
         console.log(latitude, longitude);
         console.log((response.main.temp - 273.15) * 1.80 + 32);
-
+        
         $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
         var map;
         var service;
@@ -87,12 +87,27 @@ $("#submit").on("click", function(event){
           map: map,
           position: place.geometry.location,
         });
+        
+        var markerA = new google.maps.Marker({
+          map: map,
+          position: new google.maps.LatLng(33.75, -84.39),
+          customInfo: "Atlanta"
+      });
+      
+      google.maps.event.addListener(marker, 'click', function() {
+       $("#cardy").show()
 
+    });
+        marker.addListener('click', function() {
+          map.setZoom(17);
+          map.setCenter(marker.getPosition());
+        })
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name);
           infowindow.open(map, this);
         });
       }
+     
 initMap();
   })
 

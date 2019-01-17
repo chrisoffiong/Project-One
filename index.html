@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Poppins" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Bitter|Libre+Baskerville" rel="stylesheet">
     <title>BikeAdvisor</title>
 </head>
+
 <body>
     <nav>
         <div class="nav-wrapper">
-<!--             <a href="#" class="brand-logo">BikeAdvisor</a> -->
-                <ul id="nav-mobile" class="right">
-                    <li class="active"><a href="index.html"><i class="material-icons">map</i></a></li>
-                    <li><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
-                    <li><a href="support.html"><i class="small material-icons">live_help</i></a></li>
-                </ul>
+            <!--             <a href="#" class="brand-logo">BikeAdvisor</a> -->
+            <ul id="nav-mobile" class="right">
+                <li class="active"><a href="index.html"><i class="material-icons">map</i></a></li>
+                <li><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
+                <li><a href="support.html"><i class="small material-icons">live_help</i></a></li>
+            </ul>
         </div>
     </nav>
     <div class="content">
@@ -30,84 +32,103 @@
                     <h1 class="center-align">BikeAdvisor</h1>
                     <h5 id="subHeader" class="center-align">Plan your next ride</h5>
 
-                <div class="col m12" id="cityStateSearch">
-                    <div class="input-field col m9 s12">
-                        <select class="icons" id="cities">
-                            <option value="" disabled selected>Select your city</option>
-                            <option value="atlanta" id= "atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
-                            <option value="boston"  id= "boston" data-icon="assets/images/boston.jpg">Boston</option>
-                            <option value="new york" id= "newyork" data-icon="assets/images/newyork.jpeg">New York</option>
-                            <option value="portland" id= "portland" data-icon="assets/images/portland.jpg">Portland</option>
-                            <option value="seattle" id= "seattle" data-icon="assets/images/seattle.jpg">Seattle</option>
-                        </select>
-                        <!-- <label>Select your city</label> -->
+                    <div class="col m12" id="cityStateSearch">
+                        <div class="input-field col m9 s12">
+                            <select class="icons" id="cities">
+                                <option value="" disabled selected>Select your city</option>
+                                <option value="atlanta" id="atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
+                                <option value="boston" id="boston" data-icon="assets/images/boston.jpg">Boston</option>
+                                <option value="new york" id="newyork" data-icon="assets/images/newyork.jpeg">New York</option>
+                                <option value="portland" id="portland" data-icon="assets/images/portland.jpg">Portland</option>
+                                <option value="seattle" id="seattle" data-icon="assets/images/seattle.jpg">Seattle</option>
+                            </select>
+                            <!-- <label>Select your city</label> -->
+                        </div>
                     </div>
-                </div>
-                <div class="col m12" id="areaCodeSearch">
-                    <div class="input-field col m9 s12">
-                        <select class="icons" id="attraction">
-                            <option value="" disabled selected>Select activity</option>
-                            <option value="racks" data-icon="assets/images/bikerack.jpg">Racks</option>
-                            <option value="shops" id ="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
-                            <option value="attractions" id="attractions" data-icon="assets/images/attractions.jpg">Attractions</option>
-                        </select>
-                        <!-- <label>Select your area of interest</label> -->
+                    <div class="col m12" id="areaCodeSearch">
+                        <div class="input-field col m9 s12">
+                            <select class="icons" id="attraction">
+                                <option value="" disabled selected>Select activity</option>
+                                <option value="racks" data-icon="assets/images/bikerack.jpg">Racks</option>
+                                <option value="shops" id="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
+                                <option value="attractions" id="attractions" data-icon="assets/images/attractions.jpg">Attractions</option>
+                            </select>
+                            <!-- <label>Select your area of interest</label> -->
+                        </div>
                     </div>
-                </div>
-                <div class="col m6 s12">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
+                    <div class="col m6 s12">
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row" id="map">
             <div class="col m8 s12" id="mapDisplay">
-<!--                 <p class="z-depth-1">Map</p> -->
+                <!--                 <p class="z-depth-1">Map</p> -->
             </div>
             <div class="col m4 s12">
                 <div id="weatherDisplay">
                     <div id="icon"></div>
                 </div>
                 <div id="cardDisplay">
-<!--                     <p class="z-depth-1">Cards</p> -->
+                    <!--                     <p class="z-depth-1">Cards</p> -->
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row" id="cardy">
+            <div class="col m4 s12">
+                <h2 class="header">Bike Advisor</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-<!--               <div class="col l6 s12">
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <!--               <div class="col l6 s12">
                 <h5 class="white-text">Footer Content</h5>
                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div> -->
-              <div class="col l4 s12">
-                <h5 class="white-text">Navigation</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="index.html">Discover</a></li>
-                  <li><a class="grey-text text-lighten-3" href="review.html">Review</a></li>
-                  <li><a class="grey-text text-lighten-3" href="support.html">Support</a></li>
-                </ul>
-              </div>
+                    <div class="col l4 s12">
+                        <h5 class="white-text">Navigation</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="index.html">Discover</a></li>
+                            <li><a class="grey-text text-lighten-3" href="review.html">Review</a></li>
+                            <li><a class="grey-text text-lighten-3" href="support.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Copyright
-<!--             <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2019 Copyright
+                    <!--             <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+                </div>
             </div>
-          </div>
         </footer>
 
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFN1qM1ehiZ17-E0S-ub-9gOmTIn8qDQw&libraries=places&callback=initmap"
-    async defer></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/project.js"></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFN1qM1ehiZ17-E0S-ub-9gOmTIn8qDQw&libraries=places&callback=initmap"
+            async defer></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+        <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/project.js"></script>
 </body>
+
 </html>
