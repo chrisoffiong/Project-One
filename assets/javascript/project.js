@@ -7,11 +7,13 @@ var config = {
   storageBucket: "project-one-64b32.appspot.com",
   messagingSenderId: "668349026732"
 };
+
 firebase.initializeApp(config);
 $("#cardy").hide()
 $("#submit").on("click", function(event){
     event.preventDefault();
-    
+    let fileStackApi ="AzLlVIpnRxa6b0X35XLtgz"
+    let fileUrl = "https://cdn.filestackcontent.com/" + fileStackApi
     let place = $("#cities").val();
     let attractions = $("#attractions").val();
     let reviewArray = [];
