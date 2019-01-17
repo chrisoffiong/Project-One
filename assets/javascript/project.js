@@ -65,7 +65,8 @@ $("#submit").on("click", function(event){
         if ($("#attraction :selected").val() == "racks" )   {var request = {
           query: 'bike rack',
           fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
-        };
+        }
+        console.log(results);
       
         service = new google.maps.places.PlacesService(map);
         service.findPlaceFromQuery(request, callback);
