@@ -47,7 +47,8 @@ $("#submit").on("click", function(event){
              center: {lat: latitude, lng: longitude},
              zoom: 11
            });
-           infowindow = new google.maps.InfoWindow();
+           infowindow = new google.maps.InfoWindow();var bikeLayer = new google.maps.BicyclingLayer();
+           bikeLayer.setMap(map);
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: location,
@@ -60,6 +61,7 @@ $("#submit").on("click", function(event){
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
+
           }
           console.log(results);
         }
@@ -71,17 +73,14 @@ $("#submit").on("click", function(event){
           map: map,
           position: place.geometry.location
         });
-
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name);
           infowindow.open(map, this);
+          $(".card").html("<h4 class='card' id='cardHeader'>" + place.name + "</h4>");
         });
       }
 initMap();
   })
-
-
-
 
   });
 
