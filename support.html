@@ -35,50 +35,51 @@
 
         <div class="row">
             <div class="container z-depth-2" id="reviewForm">
-                <form class="col-lg-12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="name" type="text" class="validate" placeholder="Your Name">
-                            <label for="name"></label>
+                <form class="gform" method="POST" data-email="bdixon850@yahoo.com" action="https://script.google.com/macros/s/AKfycbyOSl3CGYoYWyna9Bl3T_mOmhYhFenVGheYnDtExw/exec">
+                    <div class="form-elements">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="name" name="name" type="text" class="validate" placeholder="Your Name">
+                                <label for="name"></label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate" placeholder="Email">
-                            <label for="email"></label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" name="email" type="email" class="email-invalid" placeholder="Email">
+                                <label for="email"></label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="phone_number" type="text" class="validate" placeholder="Phone Number">
-                            <label for="phone_number"></label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="phone_number" name="phone_number" type="text" class="validate" placeholder="Phone Number">
+                                <label for="phone_number"></label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col s12">
-                            <label>Subject</label>
-                            <select class="browser-default" style="background-color: #f2f2f2;">
-                                <option value="" disabled selected>Select</option>
-                                <option value="1">Bike Rack Issues</option>
-                                <option value="2">Store Closed/Not at Location</option>
-                                <option value="3">Miscellaneous</option>
-                            </select>
+                        <div class="row">
+                            <div class="col s12">
+                                <input id="subject" name="subject" type="text" class="validate" placeholder="Subject">
+                                <label for="subject"></label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col s12">
-                            <label>Message</label>
-                            <textarea name="message" id="messageArea" cols="30" rows="10" placeholder=""></textarea>
+                        <div class="row">
+                            <div class="col s12">
+                                <label>Message</label>
+                                <textarea name="message" id="messageArea" cols="30" rows="10" placeholder=""></textarea>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col s8">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                        <div class="row">
+                            <div class="col s8">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="thankyou_message" style="display:none;">
+                            <h2>Thanks for contacting us! We will get back to you soon!</h2>
                         </div>
                     </div>
                 </form>
@@ -109,6 +110,7 @@
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
+    <script data-cfasync="false" type="text/javascript" src="assets/javascript/email.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8&callback=initMap"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <script src="assets/javascript/project.js"></script>
