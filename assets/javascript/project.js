@@ -1,4 +1,24 @@
 M.AutoInit();
+let baseImage;
+
+function encodeImageFileAsURL() {
+
+  var filesSelected = document.getElementById("inputFileToLoad").files;
+  if (filesSelected.length > 0) {
+    var fileToLoad = filesSelected[0];
+
+    var fileReader = new FileReader();
+
+    fileReader.onload = function (fileLoadedEvent) {
+      var srcData = fileLoadedEvent.target.result; // <--- data: base64
+      baseImage = srcData;
+
+
+
+    }
+    fileReader.readAsDataURL(fileToLoad);
+  }
+}
 $("#submit").on("click", function (event) {
   event.preventDefault();
 
@@ -158,7 +178,7 @@ $(document).ready(function () {
           console.log('Uploaded a base64 string!');
         });
         console.log("yes")
-        let newName = $("#email").val().trim();
+        let newName = $("#userName").val().trim();
         let newImage = baseImage;
         let rating = ""
         let newReview = $("#textarea1").val().trim();
@@ -183,4 +203,5 @@ $(document).ready(function () {
 
       $(document).ready(function () {
         $('input#input_text, textarea#textarea2').characterCounter();
-      });
+      })
+    })
