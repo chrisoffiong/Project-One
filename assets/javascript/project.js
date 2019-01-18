@@ -150,25 +150,25 @@ $("#submit").on("click", function (event) {
 });
 $(document).ready(function () {
 
-      var config = {
-        apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
-        authDomain: "project-one-64b32.firebaseapp.com",
-        databaseURL: "https://project-one-64b32.firebaseio.com",
-        projectId: "project-one-64b32",
-        storageBucket: "project-one-64b32.appspot.com",
-        messagingSenderId: "668349026732"
-      };
-      firebase.initializeApp(config);
+  var config = {
+    apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
+    authDomain: "project-one-64b32.firebaseapp.com",
+    databaseURL: "https://project-one-64b32.firebaseio.com",
+    projectId: "project-one-64b32",
+    storageBucket: "project-one-64b32.appspot.com",
+    messagingSenderId: "668349026732"
+  };
+  firebase.initializeApp(config);
 
-      let database = firebase.database();
-      var defaultStorage = firebase.storage();
+  let database = firebase.database();
+  var defaultStorage = firebase.storage();
 
-      database.ref().on("child_added", function (childSnap) {
-        let name = childSnap.val().name;
-        let review = childSnap.val().review;
-        let image = childSnap.val().image;
-        $("#latestreview").html("<img height = '200' width= '200' src=" + image + ">")
-      })
+  database.ref().on("child_added", function (childSnap) {
+    let name = childSnap.val().name;
+    let review = childSnap.val().review;
+    let image = childSnap.val().image;
+    $("#imagediv").html("<img height = '200' width= '200' src=" + image + ">")
+  })
 
       $("#submit1").on("click", function () {
         var storageRef = firebase.storage().ref().child("new/");
