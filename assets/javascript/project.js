@@ -6,15 +6,11 @@ function encodeImageFileAsURL() {
   var filesSelected = document.getElementById("inputFileToLoad").files;
   if (filesSelected.length > 0) {
     var fileToLoad = filesSelected[0];
-
     var fileReader = new FileReader();
 
     fileReader.onload = function (fileLoadedEvent) {
       var srcData = fileLoadedEvent.target.result; // <--- data: base64
       baseImage = srcData;
-
-
-
     }
     fileReader.readAsDataURL(fileToLoad);
   }
@@ -23,8 +19,6 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
 
   let city = $("#cities").val();
-
-
   console.log(city);
   let cityId = $(".icons").val().trim();
   let countryCode = "us"
@@ -135,14 +129,9 @@ $("#submit").on("click", function (event) {
 
           $("#cardDisplay").removeClass("hide");
 
-
-
         });
-
       }
-
     }
-
 
     initMap();
   })
@@ -167,7 +156,7 @@ $(document).ready(function () {
     let name = childSnap.val().name;
     let review = childSnap.val().review;
     let image = childSnap.val().image;
-    $("#imagediv").html("<img height = '200' width= '200' src=" + image + ">")
+    $("#latestReview").html( "<p> Latest Review: </p> <img height = '100' width= '100' src=" + image + ">" + name + review)
   })
 
       $("#submit1").on("click", function () {

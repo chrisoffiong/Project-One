@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Poppins" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Bitter|Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>BikeAdvisor</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
                             <label for="userName">Name</label>
                         </div>
                     </div>
-                    <div class="row">
+                     <div class="row">
                         <div class="col m12">
                             <label>Your rating</label>
                             <div class="rating-container">
@@ -60,7 +61,7 @@
                                 <div class="star" id="fiveStars"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -72,7 +73,7 @@
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
-                                    <input type="file" multiple>
+                                    <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL()" multiple>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text" placeholder="Upload one or more images">
