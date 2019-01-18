@@ -156,6 +156,18 @@ p  {
 #title{
     color: black;
 }
-#3 {
+.banch {
+    color: rgba(23, 74, 185, 0.856);
+    text-align: center;
+    font-size: 18px;
+}
+#bold {
     color: black;
+}
+a {
+    color: red;
+}
+
+.textcenter {
+    text-align: center;
 }

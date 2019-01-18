@@ -157,7 +157,7 @@ $(document).ready(function () {
     let review = childSnap.val().review;
     let image = childSnap.val().image;
     let location = childSnap.val().location;
-    $("#latestReview").html( "<p> Latest Review: </p> <img height = '100' width= '100' src=" + image + ">" + location + name + review)
+    $("#latestReview").html(  "<div class= 'banch'> <p> Latest Story: </p> <img height = '180' width= '180' src=" + image + ">" + "<br> " + "<b id='bold'>"+ name + " at " + location + " says: </b> <i>" +  " " + review + " </i> </div> <p class='textcenter'> Tell us about your Journey <a href='review.html'>here!</a>")
   })
 
       $("#submit1").on("click", function () {
