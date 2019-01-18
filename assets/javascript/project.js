@@ -12,10 +12,10 @@ firebase.initializeApp(config);
 $("#submit").on("click", function(event){
     event.preventDefault();
 
-    let place = $("#cities").val();
+    let city = $("#cities").val();
 
 
-    console.log(place);
+    console.log(city);
     let cityId = $(".icons").val().trim();
     let countryCode = "us"
     let weatherApiKey = "75598549dfb84653561068b1a40f42c2"
@@ -49,12 +49,9 @@ $("#submit").on("click", function(event){
            infowindow = new google.maps.InfoWindow();
            var bikeLayer = new google.maps.BicyclingLayer();
            bikeLayer.setMap(map);
-           var request = {
-  placeId: "ChIJkyfWx8ED9YgRDzktDY6a_64",
-  fields: ['address_component', 'adr_address', 'alt_id', 'formatted_address', 'geometry', 'icon', 'id', 'name', 'permanently_closed', 'photo', 'place_id', 'plus_code', 'scope', 'type', 'url', 'utc_offset', 'vicinity']
-};
+
         var service = new google.maps.places.PlacesService(map);
-        service.getDetails(request, callback);
+
         service.nearbySearch({
           location: location,
           radius: 20000,
@@ -72,6 +69,7 @@ $("#submit").on("click", function(event){
         }
 
         function createMarker(place) {
+          
           var placeLoc = place.geometry.location;
           var marker = new google.maps.Marker({
             map: map,
@@ -80,17 +78,23 @@ $("#submit").on("click", function(event){
           google.maps.event.addListener(marker, 'click', function() {
             map.setZoom(17);
             map.setCenter(marker.getPosition());
+            console.log(place.place_id);
 
+var request = {
+placeId: place.place_id,
+fields: ['address_component', 'adr_address', 'alt_id', 'formatted_address', 'geometry', 'icon', 'id', 'name', 'permanently_closed', 'photo', 'place_id', 'plus_code', 'scope', 'type', 'url', 'utc_offset', 'vicinity']
+};
 
-  $(".card").html("<h5>" + place.name + "</h5>" + "<div class='card-tabs'> <ul class='tabs tabs-fixed-width'> <li class'tab'> <a href='#test4'>Description</a> </li> <li class='tab'> <a href='#test5'>Reviews</a> </li> <li class='tab'> <a href='#test6'>Photos</a> </li> </ul> </div> <div class='card-content grey lighten-4'> <div id='test4'>" + place.vicinity + "</div> <div id='test5'>Test 2</div> <div id='test6'>Test 3</div> </div>");
+service.getDetails(request, callback);
 
-          console.log(request);
 
 
             // $(".card-title").html(place.name);
             // $(".card-content").html(marker.getPosition());
           });
+
         }
+
       }
 
 
