@@ -156,7 +156,8 @@ $(document).ready(function () {
     let name = childSnap.val().name;
     let review = childSnap.val().review;
     let image = childSnap.val().image;
-    $("#latestReview").html( "<p> Latest Review: </p> <img height = '100' width= '100' src=" + image + ">" + name + review)
+    let location = childSnap.val().location;
+    $("#latestReview").html( "<p> Latest Review: </p> <img height = '100' width= '100' src=" + image + ">" + location + name + review)
   })
 
       $("#submit1").on("click", function () {
@@ -169,13 +170,14 @@ $(document).ready(function () {
         console.log("yes")
         let newName = $("#userName").val().trim();
         let newImage = baseImage;
-        let rating = ""
+        let newLocation = $("#location").val().trim();
         let newReview = $("#textarea1").val().trim();
 
         let newBike = {
           name: newName,
           review: newReview,
-          image: baseImage
+          image: baseImage,
+          location: newLocation
         }
         database.ref().push(newBike);
         $("#email").val("")
