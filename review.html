@@ -61,7 +61,7 @@
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
-                                    <input type="file" multiple>
+                                    <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" multiple>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text" placeholder="Upload one or more images">
@@ -74,7 +74,7 @@
         </div>
         <div class="row">
             <div class="col m6 s12">
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit1">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -98,6 +98,7 @@
               </div>
             </div>
           </div>
+          <div id="imgTest"></div>
           <div class="footer-copyright">
             <div class="container">
             © 2019 Copyright
