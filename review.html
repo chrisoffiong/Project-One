@@ -61,7 +61,7 @@
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
-                                    <input type="file" multiple>
+                                    <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL()" multiple>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text" placeholder="Upload one or more images">
@@ -74,13 +74,14 @@
         </div>
         <div class="row">
             <div class="col m6 s12">
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit1">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>
         </div>
     </div>
-
+    <div id="imgTest"></div>
+    <div id="imagediv"></div>
             <footer class="page-footer">
           <div class="container">
             <div class="row">
@@ -109,7 +110,7 @@
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3cg8wL6Oip0qL_iZbpCUrdBLFbm_Lk8&callback=initMap"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
     <script type="text/javascript" src="assets/javascript/project.js"></script>
 </body>
