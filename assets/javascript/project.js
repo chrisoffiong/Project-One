@@ -107,7 +107,7 @@ $("#submit").on("click", function (event) {
           console.log(results);
         }
       }
-
+     
       function createMarker(place) {
 
         var placeLoc = place.geometry.location;
@@ -126,13 +126,12 @@ $("#submit").on("click", function (event) {
           };
 
           service.getDetails(request, callback);
-
+          
           $("#cardDisplay").removeClass("hide");
 
         });
       }
     }
-
     initMap();
   })
 
