@@ -104,6 +104,16 @@ p  {
 
 }
 
+#topReviewHeader {
+    text-align: center;
+    padding: 50px;
+    background-image: url("../images/reviewHeader.jpg");
+    height: 450px;
+    background-size: cover;
+    background-color: #bfae84;
+
+}
+
 #card {
     height: 200px;
     background-color: transparent;
