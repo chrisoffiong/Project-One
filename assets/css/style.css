@@ -148,3 +148,7 @@ p  {
     margin-bottom: 15px;
     padding: 5px;
 }
+
+input:invalid {
+    border: 2px dashed red;
+  }
