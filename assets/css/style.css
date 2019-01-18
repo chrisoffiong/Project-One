@@ -74,13 +74,15 @@ p  {
 
 .star {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #CC0;
+    width: 15px;
+    height: 15px;
+    background-color: #dad5ca;
     margin: 3px;
+    border-radius: 50%
 }
+
 .active2 {
-    background-color: #C00;
+    background-color: #CC0;
 }
 
 #icon {
