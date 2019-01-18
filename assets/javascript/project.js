@@ -1,4 +1,4 @@
-
+M.AutoInit();
 var config = {
   apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
   authDomain: "project-one-64b32.firebaseapp.com",
@@ -37,8 +37,37 @@ $("#submit").on("click", function(event){
         let iconUrl = "http://openweathermap.org/img/w/" + iconId + ".png";
         console.log(latitude, longitude);
         console.log((response.main.temp - 273.15) * 1.80 + 32);
+        $("#weatherDisplay").html(Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F ");
+       $("#weatherIcon").html("<img id='icon' src='" + iconUrl + "'>");
+       $("#weatherType").html(response.weather[0].main);
+       $("#weatherCard").addClass("z-depth-1");
+       $("#weatherCard").addClass("populatedCard");
+       if (iconId.substr(-1) == "n") {
+         $("#weatherCard").css("background-color", "#282828");
+         $("#weatherDisplay").css("color", "white");
+         $("#weatherType").css("color", "white");
+       } else if (parseInt(iconId.substring(0, 2)) < 3) {
+         $("#weatherCard").css("background-color", "#add6f5");
+         $("#weatherDisplay").css("color", "#3c5375");
+         $("#weatherType").css("color", "#3c5375");
+       } else if (parseInt(iconId.substring(0, 2)) < 9) {
+         $("#weatherCard").css("background-color", "#808080");
+         $("#weatherDisplay").css("color", "white");
+         $("#weatherType").css("color", "white");
+       } else if (parseInt(iconId.substring(0, 2)) < 13) {
+         $("#weatherCard").css("background-color", "#3c5375");
+         $("#weatherDisplay").css("color", "white");
+         $("#weatherType").css("color", "white");
+       } else if (parseInt(iconId.substring(0, 2)) < 50) {
+         $("#weatherCard").css("background-color", "white");
+         $("#weatherDisplay").css("color", "#3c5375");
+         $("#weatherType").css("color", "#3c5375");
+       } else {
+         $("#weatherCard").css("background-color", "#bda29e");
+         $("#weatherDisplay").css("color", "#3c5375");
+         $("#weatherType").css("color", "#3c5375");
+       }
 
-        $("#weatherDisplay").html(response.weather[0].main + " " + Math.ceil((response.main.temp - 273.15) * 1.80 + 32) + "&#176;" + "F " + "<img id='icon' src='" + iconUrl + "'>");
         var map;
         let attractions = $("#attractions").val();
          function initMap() {
@@ -69,7 +98,7 @@ $("#submit").on("click", function(event){
         }
 
         function createMarker(place) {
-          
+
           var placeLoc = place.geometry.location;
           var marker = new google.maps.Marker({
             map: map,
@@ -87,10 +116,10 @@ fields: ['address_component', 'adr_address', 'alt_id', 'formatted_address', 'geo
 
 service.getDetails(request, callback);
 
+$("#cardDisplay").removeClass("hide");
 
 
-            // $(".card-title").html(place.name);
-            // $(".card-content").html(marker.getPosition());
+
           });
 
         }

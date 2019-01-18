@@ -65,6 +65,7 @@ p  {
 .hide {
     display: none;
 }
+
 #reviewForm {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -73,27 +74,21 @@ p  {
 
 .star {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #CC0;
+    width: 15px;
+    height: 15px;
+    background-color: #dad5ca;
     margin: 3px;
+    border-radius: 50%
 }
+
 .active2 {
-    background-color: #C00;
+    background-color: #CC0;
 }
 
-#weatherDisplay{
-    font-family: 'Bitter', serif;
-    font-size: 24px;
-    color: #3c5375;
-    height: 96px;
-}
-
-#icon{
+#icon {
     width: 96px;
     height: 100%;
 }
-
 
 #titlePar {
     color: white;
@@ -109,6 +104,16 @@ p  {
 
 }
 
+#topReviewHeader {
+    text-align: center;
+    padding: 50px;
+    background-image: url("../images/reviewHeader.jpg");
+    height: 450px;
+    background-size: cover;
+    background-color: #bfae84;
+
+}
+
 #card {
     height: 200px;
     background-color: transparent;
@@ -116,15 +121,38 @@ p  {
     color: white;
 }
 
-#textHeader, h5{
+#textHeader, h5 {
     font-family: 'Libre Baskerville', serif;
     color: white;
 }
 
-#title{
-    color: black;
+.populatedCard {
+    background-color:#bda29e;
+    height: 85px;
 }
 
-#cardDisplay{
-    margin-top: 120px;
+#weatherDisplay {
+    font-size: 2.5em;
+    font-family: 'Bitter', serif;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+#weatherIcon, #weatherType {
+    color: white;
+    font-size: 1em;
+}
+
+#latestReview {
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+#cardHolder{
+    margin-top: 150px;
+}
+
+#title{
+    color: black;
 }
