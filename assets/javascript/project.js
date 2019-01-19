@@ -147,15 +147,66 @@ $("#submit").on("click", function(event) {
 
 });
 
-$(document).ready(function() {
-	$('select').formSelect();
-})
+$(document).ready(function () {
 
-$('.rating-container .star').click(function() {
-	$('.rating-container .star').removeClass('active2');
-	$(this).prevAll('.star').addBack().addClass('active2');
-});
+  var config = {
+    apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
+    authDomain: "project-one-64b32.firebaseapp.com",
+    databaseURL: "https://project-one-64b32.firebaseio.com",
+    projectId: "project-one-64b32",
+    storageBucket: "project-one-64b32.appspot.com",
+    messagingSenderId: "668349026732"
+  };
+  firebase.initializeApp(config);
 
+  let database = firebase.database();
+  var defaultStorage = firebase.storage();
+
+  database.ref().on("child_added", function (childSnap) {
+    let name = childSnap.val().name;
+    let review = childSnap.val().review;
+    let image = childSnap.val().image;
+    let location = childSnap.val().location;
+    $("#latestReview").html(  "<div class= 'banch'> <p> Latest Story: </p> <img height = '180' width= '180' src=" + image + ">" + "<br> " + "<b id='bold'>"+ name + " at " + location + " says: </b> <i>" +  " " + review + " </i> </div> <p class='textcenter'> Tell us about your Journey <a href='review.html'>here!</a>")
+  })
+
+      $("#submit1").on("click", function () {
+        var storageRef = firebase.storage().ref().child("new/");
+        var imageRef = "new/";
+
+        var task = storageRef.putString(baseImage, 'data_url').then(function (snapshot) {
+          console.log('Uploaded a base64 string!');
+        });
+        console.log("yes")
+        let newName = $("#userName").val().trim();
+        let newImage = baseImage;
+        let newLocation = $("#location").val().trim();
+        let newReview = $("#textarea1").val().trim();
+
+        let newBike = {
+          name: newName,
+          review: newReview,
+          image: baseImage,
+          location: newLocation
+        }
+        database.ref().push(newBike);
+        $("#email").val("")
+        return false;
+      })
+    })
+      $(document).ready(function () {
+        $('select').formSelect();
+      })
+
+      $('.rating-container .star').click(function () {
+        $('.rating-container .star').removeClass('active2');
+        $(this).prevAll('.star').addBack().addClass('active2');
+      });
+
+      $(document).ready(function () {
+        $('input#input_text, textarea#textarea2').characterCounter();
+      })
+    
 $(document).ready(function() {
 	$('input#input_text, textarea#textarea2').characterCounter();
 });
