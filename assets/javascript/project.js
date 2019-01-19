@@ -1,4 +1,18 @@
 M.AutoInit();
+function encodeImageFileAsURL() {
+
+  var filesSelected = document.getElementById("inputFileToLoad").files;
+  if (filesSelected.length > 0) {
+    var fileToLoad = filesSelected[0];
+    var fileReader = new FileReader();
+
+    fileReader.onload = function (fileLoadedEvent) {
+      var srcData = fileLoadedEvent.target.result; // <--- data: base64
+      baseImage = srcData;
+    }
+    fileReader.readAsDataURL(fileToLoad);
+  }
+}
 var config = {
 	apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
 	authDomain: "project-one-64b32.firebaseapp.com",
