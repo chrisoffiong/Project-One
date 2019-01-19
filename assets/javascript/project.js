@@ -83,7 +83,7 @@ $("#submit").on("click", function(event) {
 					lat: latitude,
 					lng: longitude
 				},
-				zoom: 11
+				zoom: 12
 			});
 			infowindow = new google.maps.InfoWindow();
 			var bikeLayer = new google.maps.BicyclingLayer();
