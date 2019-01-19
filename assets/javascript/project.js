@@ -127,7 +127,7 @@ $("#submit").on("click", function (event) {
               console.log(results);
               $("#cardDisplay").removeClass("hide");
               $("#cardTitle").html("<div class='results'>" + results.name + "</div>");
-              $("#test4").html(results.formatted_address + "<br><br><b>Hours:</b>");
+              $("#test4").html("<div class='new'>" + results.formatted_address + "</div><br><br><b>Hours:</b>");
               results.opening_hours.weekday_text.forEach(function (day) {
                 $("#test4").append("<br>" + "<b>" + day + "</b>");
               });

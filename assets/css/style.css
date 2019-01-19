@@ -175,6 +175,14 @@ a {
     font-weight: bold;
     font-size: 18px;
 }
-.this {
+.new {
     text-align: center;
+    font-family: 'Arvo', serif;
+}
+
+.thankyou_message {
+    text-align: center;
+}
+h2 {
+    font-family: 'Arvo', serif;
 }
