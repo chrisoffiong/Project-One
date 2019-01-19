@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Poppins" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Bitter|Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <title>BikeAdvisor</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
                             <label for="userName">Name</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col m12">
                             <label>Your rating</label>
                             <div class="rating-container">
@@ -59,6 +60,12 @@
                                 <div class="star" id="fourStars"></div>
                                 <div class="star" id="fiveStars"></div>
                             </div>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="location" class="materialize-textarea"></textarea>
+                            <label for="location">Location</label>
                         </div>
                     </div>
                     <div class="row">
@@ -72,7 +79,7 @@
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
-                                    <input type="file" multiple>
+                                    <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL()" multiple>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text" placeholder="Upload one or more images">
@@ -85,7 +92,7 @@
         </div>
         <div class="row">
             <div class="col m6 s12">
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit1">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>

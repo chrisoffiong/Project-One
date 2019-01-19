@@ -156,3 +156,25 @@ p  {
 #title{
     color: black;
 }
+.banch {
+    color: rgba(23, 74, 185, 0.856);
+    text-align: center;
+    font-size: 18px;
+}
+#bold {
+    color: black;
+}
+a {
+    color: red;
+}
+
+.textcenter, .results {
+    text-align: center;
+    font-family: 'Arvo', serif;
+    color: rgb(9, 9, 70);
+    font-weight: bold;
+    font-size: 18px;
+}
+.this {
+    text-align: center;
+}
