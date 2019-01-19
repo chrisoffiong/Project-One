@@ -190,10 +190,10 @@ $(document).ready(function () {
         $('select').formSelect();
       })
 
-      $('.rating-container .star').click(function () {
-        $('.rating-container .star').removeClass('active2');
-        $(this).prevAll('.star').addBack().addClass('active2');
-      });
+      // $('.rating-container .star').click(function () {
+      //   $('.rating-container .star').removeClass('active2');
+      //   $(this).prevAll('.star').addBack().addClass('active2');
+      // });
 
       $(document).ready(function () {
         $('input#input_text, textarea#textarea2').characterCounter();
