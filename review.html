@@ -78,10 +78,10 @@
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
-                                    <input type="file" multiple>
+                                    <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL()" multiple>
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL()" placeholder= "Upload a file here"multiple>
+                                    <input class="file-path validate" type="text" placeholder="Upload one or more images">
                                 </div>
                             </div>
                         </div>
