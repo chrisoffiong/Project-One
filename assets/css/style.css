@@ -8,15 +8,15 @@ h1 {
     margin-bottom: 2px;
 }
 
-  body {
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
 
 p  {
     font-family: 'Bitter', serif;
@@ -96,22 +96,22 @@ p  {
 
 #topHeader {
     text-align: center;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-image: url("../images/bikingpic.jpg");
     height: 450px;
     background-size: cover;
     background-color: #bfae84;
-
 }
 
 #topReviewHeader {
     text-align: center;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-image: url("../images/reviewHeader.jpg");
     height: 450px;
     background-size: cover;
     background-color: #bfae84;
-
 }
 
 #card {
@@ -189,3 +189,15 @@ h2 {
 #image1 {
     text-align: center;
 }
+
+@media only screen and (max-width: 640px) {
+
+    h1 {
+        font-size: 3.2em;
+    }
+
+    h5 {
+        font-size: 1.5em;
+    }
+    
+    }
