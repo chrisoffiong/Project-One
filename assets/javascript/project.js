@@ -124,7 +124,11 @@ $("#submit").on("click", function (event) {
 
           function locationCallback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-              console.log(results);
+			  console.log(results);
+			  $("#cardTitle").empty();
+			  $("#test4").empty();
+			  $("#test5").empty();
+			  $("#test6").empty();
               $("#cardDisplay").removeClass("hide");
               $("#cardTitle").html("<div class='results'>" + results.name + "</div>");
               $("#test4").html("<div class='new'>" + results.formatted_address + "</div><br><br><b>Hours:</b>");
@@ -132,7 +136,7 @@ $("#submit").on("click", function (event) {
                 $("#test4").append("<br>" + "<b>" + day + "</b>");
               });
               results.photos.forEach(function(photo) {
-				let url = photo.getUrl({'maxWidth': 300, 'maxHeight': 250});
+				let url = photo.getUrl({'maxWidth': 200, 'maxHeight': 150});
 				console.log(url);
 				$("#test6").append("<img src='" + url + "'>  ")
 			});
