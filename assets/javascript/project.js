@@ -112,7 +112,7 @@ $("#submit").on("click", function (event) {
           map: map,
           position: place.geometry.location
         });
-        
+
         google.maps.event.addListener(marker, 'click', function () {
           map.setZoom(17);
           map.setCenter(marker.getPosition());
@@ -131,12 +131,12 @@ $("#submit").on("click", function (event) {
               results.opening_hours.weekday_text.forEach(function (day) {
                 $("#test4").append("<br>" + "<b>" + day + "</b>");
               });
-              for(i=0; i < results.photos.length; i++){
+              for (i = 0; i < results.photos.length; i++) {
                 $("#test6").html("<img src='" + results.photos[i].html_attributions[0] + "'>")
               }
-              
-                $("#test5").html("<div class='results'> <b>" + results.reviews[0].author_name + " Says: </div></b>  <br> " + results.reviews[0].text + "<br>")
-              
+
+              $("#test5").html("<div class='results'> <b>" + results.reviews[0].author_name + " Says: </div></b>  <br> " + results.reviews[0].text + "<br>")
+
             }
           }
         });
