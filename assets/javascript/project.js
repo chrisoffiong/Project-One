@@ -131,7 +131,8 @@ $("#submit").on("click", function (event) {
 			  $("#test6").empty();
               $("#cardDisplay").removeClass("hide");
               $("#cardTitle").html("<div class='results'>" + results.name + "</div>");
-              $("#test4").html("<div class='new'>" + results.formatted_address + "</div><br><br><b>Hours:</b>");
+			  $("#test4").html("<div class='new'>" + results.formatted_address + "</div><br><br><b>Hours:</b>");
+			  $("#test4").html("<div class='new'>" + results.formatted_address + "<br><br>" + "Rating: " + results.rating + "/5" + "</div><br><br>Hours:");
               results.opening_hours.weekday_text.forEach(function (day) {
                 $("#test4").append("<br>" + "<b>" + day + "</b>");
               });
