@@ -13,15 +13,7 @@ function encodeImageFileAsURL() {
     fileReader.readAsDataURL(fileToLoad);
   }
 }
-var config = {
-	apiKey: "AIzaSyCt1tjlPv6urCLqmPuzSLoyVnGIevTPjds",
-	authDomain: "project-one-64b32.firebaseapp.com",
-	databaseURL: "https://project-one-64b32.firebaseio.com",
-	projectId: "project-one-64b32",
-	storageBucket: "project-one-64b32.appspot.com",
-	messagingSenderId: "668349026732"
-};
-firebase.initializeApp(config);
+
 
 $("#submit").on("click", function(event) {
 	event.preventDefault();
