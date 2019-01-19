@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bitter|Libre+Baskerville" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <title>BikeAdvisor</title>
 </head>
+
 <body>
     <nav>
         <div class="nav-wrapper">
-<!--             <a href="#" class="brand-logo">BikeAdvisor</a> -->
-                <ul id="nav-mobile" class="right">
-                    <li class="active"><a href="index.html"><i class="material-icons">map</i></a></li>
-                    <li><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
-                    <li><a href="support.html"><i class="small material-icons">live_help</i></a></li>
-                </ul>
+            <!--             <a href="#" class="brand-logo">BikeAdvisor</a> -->
+            <ul id="nav-mobile" class="right">
+                <li class="active"><a href="index.html"><i class="material-icons">map</i></a></li>
+                <li><a href="review.html"><i class="small material-icons">mode_edit</i></a></li>
+                <li><a href="support.html"><i class="small material-icons">live_help</i></a></li>
+            </ul>
         </div>
     </nav>
     <div class="content">
@@ -30,117 +32,119 @@
                     <h1 class="center-align">BikeAdvisor</h1>
                     <h5 id="subHeader" class="center-align">Plan your next ride</h5>
 
-                <div class="col m12" id="cityStateSearch">
-                    <div class="input-field col m9 s12">
-                        <select class="icons" id="cities">
-                            <option value="" disabled selected>Select your city</option>
-                            <option value="4180439" id= "atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
-                            <option value="4930956"  id= "boston" data-icon="assets/images/boston.jpg">Boston</option>
-                            <option value="5128581" id= "newyork" data-icon="assets/images/newyork.jpeg">New York</option>
-                            <option value="5746545" id= "portland" data-icon="assets/images/portland.jpg">Portland</option>
-                            <option value="5809844" id= "seattle" data-icon="assets/images/seattle.jpg">Seattle</option>
-                        </select>
-                        <!-- <label>Select your city</label> -->
+                    <div class="col m12" id="cityStateSearch">
+                        <div class="input-field col m9 s12">
+                            <select class="icons" id="cities">
+                                <option value="" disabled selected>Select your city</option>
+                                <option value="4180439" id="atlanta" data-icon="assets/images/atlanta.jpg">Atlanta</option>
+                                <option value="4930956" id="boston" data-icon="assets/images/boston.jpg">Boston</option>
+                                <option value="5128581" id="newyork" data-icon="assets/images/newyork.jpeg">New York</option>
+                                <option value="5746545" id="portland" data-icon="assets/images/portland.jpg">Portland</option>
+                                <option value="5809844" id="seattle" data-icon="assets/images/seattle.jpg">Seattle</option>
+                            </select>
+                            <!-- <label>Select your city</label> -->
+                        </div>
                     </div>
-                </div>
-                <div class="col m12" id="areaCodeSearch">
-                    <div class="input-field col m9 s12">
-                        <select class="icons" id="attractions">
-                            <option value="" disabled selected>Select activity</option>
-                            <option value="bike rack" data-icon="assets/images/bikerack.jpg">Bike Racks</option>
-                            <option value="bike shop" id ="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
-                            <option value="attractions" id="attractions" data-icon="assets/images/attractions.jpg">Attractions</option>
-                            <option value="coffee" id="coffee" data-icon="assets/images/coffee.jpg">Coffee</option>
-                            <option value="bike rentals" id="bike rentals" data-icon="assets/images/bikerental.jpg">Bike Rentals</option>
-                        </select>
-                        <!-- <label>Select your area of interest</label> -->
+                    <div class="col m12" id="areaCodeSearch">
+                        <div class="input-field col m9 s12">
+                            <select class="icons" id="attractions">
+                                <option value="" disabled selected>Select activity</option>
+                                <option value="bike rack" data-icon="assets/images/bikerack.jpg">Bike Racks</option>
+                                <option value="bike shop" id="shops" data-icon="assets/images/bikeshop.jpg">Shops</option>
+                                <option value="attractions" id="attractions" data-icon="assets/images/attractions.jpg">Attractions</option>
+                                <option value="coffee" id="coffee" data-icon="assets/images/coffee.jpg">Coffee</option>
+                                <option value="bike rentals" id="bike rentals" data-icon="assets/images/bikerental.jpg">Bike
+                                    Rentals</option>
+                            </select>
+                            <!-- <label>Select your area of interest</label> -->
+                        </div>
                     </div>
-                </div>
-                <div class="col m6 s12">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
+                    <div class="col m6 s12">
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row" id="map">
             <div class="col m8 s12" id="mapDisplay">
-<!--                 <p class="z-depth-1">Map</p> -->
+                <!--                 <p class="z-depth-1">Map</p> -->
             </div>
             <div class="col m4 s12" id="weatherCard">
-                    <div class="row">
-                        <div class="col m6 s4">
-                            <div class="center-align" id="weatherIcon"></div>
+                <div class="row">
+                    <div class="col m6 s4">
+                        <div class="center-align" id="weatherIcon"></div>
 
-                        </div>
+                    </div>
 
-                        <div class="col m6 s4">
+                    <div class="col m6 s4">
 
-                                    <div class="left-align" id="weatherDisplay"></div>
-                                    <div class="row">
-                                <div class="col m4 s4" id="weatherType"></div>
-                            </div>
+                        <div class="left-align" id="weatherDisplay"></div>
+                        <div class="row">
+                            <div class="col m4 s4" id="weatherType"></div>
                         </div>
                     </div>
-                        <!-- <div id="icon"></div> -->
                 </div>
-                <div class="col m4 s12">
+                <!-- <div id="icon"></div> -->
+            </div>
+            <div class="col m4 s12">
                 <div class="hide" id="cardDisplay">
                     <div class="card">
-    <div class="card-content" id="cardTitle">
+                        <div class="card-content" id="cardTitle">
 
-    </div>
-    <div class="card-tabs">
-      <ul class="tabs tabs-fixed-width">
-        <li class="tab"><a class="active" href="#test4">Description</a></li>
-        <li class="tab"><a href="#test5">Reviews</a></li>
-        <li class="tab"><a href="#test6">Photos</a></li>
-      </ul>
-    </div>
-    <div class="card-content grey lighten-4">
-      <div id="test4"></div>
-      <div id="test5"></div>
-      <div id="test6"></div>
-    </div>
-  </div>
-            </div>
+                        </div>
+                        <div class="card-tabs">
+                            <ul class="tabs tabs-fixed-width">
+                                <li class="tab"><a class="active" href="#test4">Description</a></li>
+                                <li class="tab"><a href="#test5">Reviews</a></li>
+                                <li class="tab"><a href="#test6">Photos</a></li>
+                            </ul>
+                        </div>
+                        <div class="card-content grey lighten-4">
+                            <div id="test4"></div>
+                            <div id="test5"></div>
+                            <div id="test6"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="container z-depth-2" id="latestReview">
     </div>
 
-            <footer class="page-footer">
-          <div class="container">
+    <footer class="page-footer">
+        <div class="container">
             <div class="row">
-<!--               <div class="col l6 s12">
+                <!--               <div class="col l6 s12">
                 <h5 class="white-text">Footer Content</h5>
                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div> -->
-              <div class="col l4 s12">
-                <h5 class="white-text">Navigation</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="index.html">Discover</a></li>
-                  <li><a class="grey-text text-lighten-3" href="review.html">Share</a></li>
-                  <li><a class="grey-text text-lighten-3" href="support.html">Support</a></li>
-                </ul>
-              </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Navigation</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Discover</a></li>
+                        <li><a class="grey-text text-lighten-3" href="review.html">Share</a></li>
+                        <li><a class="grey-text text-lighten-3" href="support.html">Support</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="footer-copyright">
+        </div>
+        <div class="footer-copyright">
             <div class="container">
-            © 2019 Copyright
-<!--             <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+                © 2019 Copyright
+                <!--             <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
             </div>
-          </div>
-        </footer>
+        </div>
+    </footer>
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFN1qM1ehiZ17-E0S-ub-9gOmTIn8qDQw&libraries=places&callback=initmap"
-    async defer></script>
+        async defer></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
     <script type="text/javascript" src="assets/javascript/project.js"></script>
 </body>
+
 </html>
